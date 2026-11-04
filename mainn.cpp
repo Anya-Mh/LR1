@@ -1,12 +1,11 @@
 #include <iostream>
 #include <string>
 #include <clocale>
-#include <cwctype>
 
 using namespace std;
 
 
-int countVowels(const wstring& text) {
+int countVowels(const wstring& text) { //функция подсчёта данных
     int count = 0;
     wstring vowels = L"уеыаоэяиюУЕЫАОЭЯИЮ";
 
@@ -18,16 +17,16 @@ int countVowels(const wstring& text) {
     return count;
 }
 
-wstring toUpperCase(wstring text) {
+wstring toUpperCase(wstring text) {  //приводим буквы к верхнему регистру
     for (size_t i = 0; i < text.size(); i++) {
-        text[i] = towupper(text[i]); //переделываем в большие
+        text[i] = towupper(text[i]); 
     }
     return text;
 }
 
-wstring toLowerCase(wstring text) {
+wstring toLowerCase(wstring text) {  //приводим буквы к нижнему регистру
     for (size_t i = 0; i < text.size(); i++) {
-        text[i] = towlower(text[i]); //переделываем в маленькие
+        text[i] = towlower(text[i]); 
     }
     return text;
 }
@@ -40,17 +39,17 @@ int main() {
     wcout << L"Введите строку: ";
     getline(wcin, text);
 
-    int vowels = countVowels(text); //считаем гласные
+    int vowels = countVowels(text); //считаем гласные буквы
     
-    wcout << L"Количество гласных букв: "; //выводим гласные
+    wcout << L"Количество гласных букв: "; //выводим количество гласных
     wcout << vowels << endl;
 
     wcout << L"Верхний регистр: ";
-    wstring upperText = toUpperCase(text); //выводим капслок
+    wstring upperText = toUpperCase(text); //выводим строку приведённую к верхнему регистру
     wcout << upperText << endl;
 
     wcout << L"Нижний регистр: ";
-    wstring lowerText = toLowerCase(text); //выводим маленькие
+    wstring lowerText = toLowerCase(text); //выводим строку приведённую к нижнему регистру
     wcout << lowerText << endl;
 
     return 0;
