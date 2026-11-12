@@ -7,7 +7,7 @@ using namespace std;
 
 int countVowels(const wstring& text) { //функция подсчёта данных
     int count = 0;
-    wstring vowels = L"уеыаоэяиюУЕЫАОЭЯИЮ";
+    wstring vowels = L"eyuoaiEYUIOAуеыаоэяиюУЕЫАОЭЯИЮ";
 
     for (size_t i = 0; i < text.size(); i++) {
         if (vowels.find(text[i]) != wstring::npos) {
@@ -41,16 +41,20 @@ int main() {
 
     int vowels = countVowels(text); //считаем гласные буквы
     
-    wcout << L"Количество гласных букв: "; //выводим количество гласных
+    wcout << L"\nКоличество гласных букв: "; //выводим количество гласных
     wcout << vowels << endl;
 
-    wcout << L"Верхний регистр: ";
+    wcout << L"\nВерхний регистр: ";
     wstring upperText = toUpperCase(text); //выводим строку приведённую к верхнему регистру
     wcout << upperText << endl;
 
-    wcout << L"Нижний регистр: ";
+    wcout << L"\nНижний регистр: ";
     wstring lowerText = toLowerCase(text); //выводим строку приведённую к нижнему регистру
     wcout << lowerText << endl;
+
+    //Это моя новая ветка, всем хорошего настроения! 
+
+    //ещё один комментарий!
 
     return 0;
 }
